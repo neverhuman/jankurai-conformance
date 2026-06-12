@@ -9,9 +9,49 @@
       "command": "bash scripts/ci-local.sh required",
       "purpose": "verify split metadata stays coherent"
     },
+    "README.md": {
+      "command": "bash scripts/ci-local.sh required",
+      "purpose": "verify the root readme routes to the conformance corpus layout"
+    },
+    "LICENSE": {
+      "command": "bash scripts/ci-local.sh required",
+      "purpose": "verify the license file is present and unmodified"
+    },
+    "CHANGELOG.md": {
+      "command": "bash scripts/ci-local.sh required",
+      "purpose": "verify the changelog tracks released corpus versions"
+    },
+    "VERSION": {
+      "command": "bash scripts/ci-local.sh required",
+      "purpose": "verify the declared corpus version stays coherent with release metadata"
+    },
+    ".gitignore": {
+      "command": "bash scripts/ci-local.sh required",
+      "purpose": "verify the exclusion list keeps transient output paths untracked"
+    },
+    "Justfile": {
+      "command": "bash scripts/ci-local.sh required",
+      "purpose": "verify the root command surface lanes are runnable"
+    },
+    "package.json": {
+      "command": "node scripts/validate-corpus.mjs",
+      "purpose": "verify the corpus schema-validation toolchain manifest stays coherent"
+    },
+    "package-lock.json": {
+      "command": "node scripts/validate-corpus.mjs",
+      "purpose": "verify the locked dependency graph for the validation toolchain resolves"
+    },
+    "tsconfig.json": {
+      "command": "node scripts/validate-corpus.mjs",
+      "purpose": "verify the strict type-check config for the validation script stays coherent"
+    },
     ".jeryu/": {
       "command": "bash scripts/ci-local.sh required",
       "purpose": "verify local Jeryu and GitHub mirror metadata"
+    },
+    ".github/": {
+      "command": "bash scripts/ci-local.sh required",
+      "purpose": "verify CI workflow entrypoints stay pinned and thin"
     },
     "agent/": {
       "command": "bash scripts/ci-local.sh required",
@@ -24,6 +64,22 @@
     "scripts/": {
       "command": "bash scripts/ci-local.sh required",
       "purpose": "verify local CI and fusion helpers"
+    },
+    "schemas/": {
+      "command": "bash scripts/ci-local.sh required",
+      "purpose": "verify the conformance-results JSON Schema stays present and valid"
+    },
+    "conformance/": {
+      "command": "bash scripts/ci-local.sh required",
+      "purpose": "verify the conformance fixtures and expected reports corpus stays intact"
+    },
+    "docs/": {
+      "command": "bash scripts/ci-local.sh required",
+      "purpose": "verify agent-readable documentation stays present"
+    },
+    "target/": {
+      "command": "bash scripts/ci-local.sh required",
+      "purpose": "verify the generated conformance output tree is reproducible from the corpus"
     },
     ".": {
       "command": "bash scripts/ci-local.sh required",

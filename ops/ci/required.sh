@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
+# Required corpus check: confirm the conformance fixtures and expected reports
+# are present and the generated output tree can be staged. This is the smallest
+# proof that the corpus is intact before any audit lane replays it.
 set -euo pipefail
-cd "$(dirname "${BASH_SOURCE[0]}")/../.."
+source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
+cd "$REPO_ROOT"
 
-test -d conformance/fixtures && test -d conformance/expected
+log "required lane: conformance corpus presence check"
+test -d conformance/fixtures
+test -d conformance/expected
+mkdir -p target/jankurai

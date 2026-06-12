@@ -1,0 +1,19 @@
+{
+  "name": "@jankurai/conformance",
+  "version": "1.7.0",
+  "private": true,
+  "description": "Conformance fixtures, expected reports, and acceptance corpus data for the jankurai auditor.",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-corpus.mjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node scripts/validate-corpus.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
+    "typescript": "5.7.2"
+  }
+}
