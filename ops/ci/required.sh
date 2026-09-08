@@ -10,3 +10,5 @@ log "required lane: conformance corpus presence check"
 test -d conformance/fixtures
 test -d conformance/expected
 mkdir -p target/jankurai
+npm test
+npm run typecheck

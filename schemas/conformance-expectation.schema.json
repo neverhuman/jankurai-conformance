@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jankurai.dev/schemas/conformance-expectation.schema.json",
+  "$defs": {
+    "audit": {
+      "type": "object",
+      "required": ["fixture", "primary_rule_id", "expected_audit_decision", "expected_witness_decision"],
+      "additionalProperties": false,
+      "properties": {
+        "fixture": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "primary_rule_id": { "type": ["string", "null"], "pattern": "^HLT-[0-9]{3}-[A-Z0-9-]+$" },
+        "expected_audit_decision": { "enum": ["pass", "block"] },
+        "expected_witness_decision": { "enum": ["pass", "block"] },
+        "claimed_conformance_level": { "enum": ["HL1", "HL2", "HL3"] }
+      }
+    },
+    "witness": {
+      "type": "object",
+      "required": ["expected_witness_decision"],
+      "oneOf": [{ "required": ["fixture"] }, { "required": ["fixtures"] }],
+      "additionalProperties": false,
+      "properties": {
+        "fixture": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "fixtures": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[a-z0-9-]+$" } },
+        "expected_witness_decision": { "enum": ["pass", "block"] },
+        "claimed_conformance_level": { "enum": ["HL1", "HL2", "HL3"] }
+      }
+    }
+  }
+}
