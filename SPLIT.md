@@ -11,14 +11,14 @@ Conformance fixtures, expected reports, and acceptance corpus data.
 
 ## Repositories
 
-- Local authoritative repo: `root/jankurai-conformance`
-- Public mirror: `neverhuman/jankurai-conformance`
+- Historical Jeryu repo: `root/jankurai-conformance`
+- Primary GitHub repository: `neverhuman/jankurai-conformance`
 - Release tag pattern: `jankurai-conformance-v1.7.0-split.0`
 - Source extraction commit: `cea83b0cbe204be276a2f0299cd760f6812ea2b0`
 
 ## Split Rules
 
-- Jeryu remains authoritative; GitHub is the public mirror.
+- GitHub is authoritative; Jeryu refs are retained as historical inputs.
 - Release builds depend on immutable GitHub tags, not branches.
 - Local development uses the hub `scripts/fuse.sh` output under `.fusion/`.
 - Committed manifests must not depend on sibling checkout paths.
