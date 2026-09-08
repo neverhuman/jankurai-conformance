@@ -15,8 +15,8 @@ the layout.
 
 ## Rules
 
-- Canonical local Jeryu repo: `root/jankurai-conformance`.
-- Public mirror target: `github.com/neverhuman/jankurai-conformance`.
+- Canonical GitHub repo: `neverhuman/jankurai-conformance`.
+- Primary remote: `github.com/neverhuman/jankurai-conformance`.
 - Do not add committed cross-repo `path = "../..."` dependencies. Use the hub
   fusion workspace for local path patches.
 - Do not hand-edit generated artifacts listed in

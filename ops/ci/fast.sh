@@ -16,5 +16,5 @@ tsc -p tsconfig.json
 npm test
 # Targeted, changed-only fast pass writes target-only fast-score artifacts so
 # repeat runs stay narrow and deterministic.
-jankurai audit . --changed-fast --no-score-history --json target/jankurai/audit-fast.json --md target/jankurai/fast-score.json
-jankurai audit . --no-score-history --json .jankurai/repo-score.json --md .jankurai/repo-score.md
+jankurai audit . --changed-fast --changed-from origin/main --no-score-history --json target/jankurai/audit-fast.json --md target/jankurai/fast-score.json
+jankurai audit . --no-score-history --json .jankurai/repo-score.json --md .jankurai/repo-score.md --full
