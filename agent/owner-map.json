@@ -20,6 +20,7 @@
     "schemas/": "standard",
     "conformance/": "standard",
     "docs/": "standard",
-    "target/": "ops"
+    "target/": "ops",
+    ".gitleaksignore": "ops"
   }
 }
