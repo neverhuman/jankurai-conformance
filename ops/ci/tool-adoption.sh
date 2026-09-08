@@ -17,7 +17,7 @@ mkdir -p target/jankurai target/jankurai/proofbind target/jankurai/security
 # / release-readiness / cost-budget all adopt the ratchet audit command, which
 # writes the repo-score artifacts.
 log "tool-adoption: ratchet audit"
-jankurai audit . --mode ratchet --baseline target/jankurai/accepted-baseline.json --json target/jankurai/repo-score.json --md target/jankurai/repo-score.md
+jankurai audit . --mode ratchet --baseline target/jankurai/accepted-baseline.json --json target/jankurai/repo-score.json --md target/jankurai/repo-score.md --full
 # Adopted artifacts: .jankurai/repo-score.json .jankurai/repo-score.md
 # target/jankurai/repair-queue.jsonl
 
@@ -29,12 +29,12 @@ jankurai proofbind verify . --changed-from origin/main
 
 # security: secret + dependency + SBOM/provenance evidence in one lane.
 log "tool-adoption: security run"
-jankurai security run . --out target/jankurai/security/evidence.json
+jankurai security run . --out target/jankurai/security/evidence.json --script ops/ci/security-scans.sh
 # Adopted artifact: target/jankurai/security/evidence.json
 
 # ci/git/release bad-behavior: the audit runs the HLT-034/035/037 workflow
 # safety detectors over .github/workflows and ops/ scripts. Capture their
 # evidence into the language-bad-behavior log the tool-adoption gate expects.
 log "tool-adoption: language bad-behavior detectors"
-jankurai audit . --no-score-history --json target/jankurai/repo-score.json --md target/jankurai/language-bad-behavior.log
+jankurai audit . --no-score-history --json target/jankurai/repo-score.json --md target/jankurai/language-bad-behavior.log --full
 # Adopted artifact: target/jankurai/language-bad-behavior.log
