@@ -1,5 +1,9 @@
 # jankurai-conformance
 
+<!-- jankurai-badge:start -->
+[![Jankurai score: 86/100](agent/jankurai-badge.svg)](agent/jankurai-badge.json)
+<!-- jankurai-badge:end -->
+
 [![ci](https://github.com/neverhuman/jankurai-conformance/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
 [![jankurai score](https://img.shields.io/badge/jankurai%20score-pass-brightgreen)](.jankurai/repo-score.md)
 
