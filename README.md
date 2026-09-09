@@ -1,7 +1,7 @@
 # jankurai-conformance
 
 <!-- jankurai-badge:start -->
-[![Jankurai score: 86/100](agent/jankurai-badge.svg)](agent/jankurai-badge.json)
+[![Jankurai score: 91/100](agent/jankurai-badge.svg)](agent/jankurai-badge.json)
 <!-- jankurai-badge:end -->
 
 [![ci](https://github.com/neverhuman/jankurai-conformance/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml)
