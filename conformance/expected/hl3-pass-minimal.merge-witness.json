@@ -1,5 +1,5 @@
 {
   "fixture": "hl3-pass-minimal",
-  "expected_witness_decision": "pass",
+  "expected_witness_decision": "block",
   "claimed_conformance_level": "HL3"
 }

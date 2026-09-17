@@ -1,8 +1,8 @@
 fixture_id = "hl3-pass-minimal"
 changed_paths = ["README.md"]
 expected_audit_decision = "pass"
-expected_witness_decision = "pass"
+expected_witness_decision = "block"
 expected_rules = []
-expected_missing_evidence = []
+expected_missing_evidence = ["required proof lane `fast` has no trusted execution observation"]
 proof_receipts = "proof-receipts"
 baseline = "auto-current"

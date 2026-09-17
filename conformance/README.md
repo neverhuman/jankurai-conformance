@@ -11,7 +11,10 @@ release evidence is produced by the observed runner.
 
 The seed suite is intentionally small:
 
-- `hl3-pass-minimal`: known-good minimal repository shape.
+- `hl3-pass-minimal`: the minimal repository passes its audit, but its imported
+  successful receipt cannot establish lane execution. The merge witness must
+  block with an explicit missing trusted observation. Supervised execution is
+  unavailable until separately qualified.
 - `ownerless-path-fail`: unmapped path should raise `HLT-003`.
 - `unmapped-proof-fail`: path without proof route should raise `HLT-004`.
 - `generated-zone-mutation-fail`: generated output changed without source proof should raise `HLT-002`.
